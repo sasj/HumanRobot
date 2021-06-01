@@ -1,0 +1,205 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+main {
+    overflow: hidden;
+}
+canvas {
+  /* display: block; */
+}
+label {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border: solid 1px #0000FF;
+
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 10;
+
+    cursor: pointer;
+    background-color: #FFFFFF;
+
+    text-align: center;
+    color: #0000FF;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 38px;
+}
+
+
+ @media screen and (min-width: 411px) {
+    label {
+        width: 52px;
+        height: 52px;
+
+        left: 35px;
+        top: 35px;
+
+        font-size: 32px;
+        line-height: 48px;
+    }
+}
+
+label::after {
+    content: "\F129";
+}
+input#info:checked ~ label::after {
+    content: "\F00D";
+}
+input#info {
+    display: none;
+    pointer-events: none;
+}
+input#info:checked ~ #artwork {
+    /* transform: rotate3d(1, 1, 1, 286deg) scale(.5); */
+}
+input#info ~ .infoWindow {
+    display: block;
+    width: 200vw;
+    height: max-content;
+    padding: 32px;
+    overflow-y: scroll;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+
+    opacity: 0;
+    color: transparent;
+    transition: all 650ms ease-in-out;
+    background: rgba(255,255,255,1);
+    /* box-shadow: 0 0 4px 1px #0000ff; */
+    /* border-radius: 1px; */
+    border: 1px solid #0000FF;
+}
+input#info:checked ~ .infoWindow {
+    width: 55vw;
+    z-index: 10;
+    opacity: 1;
+    max-height: 70vh;
+    color: #0000FF;
+}
+@media screen and (min-width: 411px) {
+    input#info:checked ~ .infoWindow {
+        width: 60vw;
+        max-height: 75vh;
+    }
+}
+@media screen and (min-width: 768px) {
+    input#info:checked ~ .infoWindow {
+        width: 60vw;
+        max-height: 75vh;
+    }
+}
+@media screen and (min-width: 1024px) {
+    input#info:checked ~ .infoWindow {
+        width: 50vw;
+        max-height: 75vh;
+    }
+}
+
+#artwork {
+    display: flex;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: center;
+    position: relative;
+    /*transform-style: preserve-3d;*/
+    /*transform: rotate3d(1, 1, 1, 360deg);*/
+    /*transition: transform 1500ms linear;*/
+}
+
+.p5Canvas {
+    border: 1px #0000FF solid;
+    position: absolute;
+    z-index: -1;
+    align-self: flex-start;
+    margin: 50px;
+}
+
+
+button {
+    padding: 1rem;
+    align-self: center;
+    border: solid 1px #0000FF;
+    position: relative;
+    top: -45px;
+    transform: scale(0.75);
+    background-color: #FFFFFF;
+    color: #0000FF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+}
+@media screen and (min-width: 411px) {
+    button {
+        margin: 0.4rem;
+        transform: scale(1);
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    button {
+        margin: 0.85rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    button {
+        margin: 0.85rem;
+        /* transform: scale(1.25); */
+    }
+}
+
+button::before {
+   display: inline-block;
+   font-style: normal;
+   font-variant: normal;
+   text-rendering: auto;
+   -webkit-font-smoothing: antialiased;
+ }
+button::before {
+  content: "\F00C";
+  font-family: "Font Awesome 5 Free";
+  padding-right: 10px;
+  font-weight: 900;
+}
+button:hover {
+  background-color: #0000FF;
+  color: #FFFFFF;
+
+}
+
+.continue {
+    position: absolute;
+    top: 50px;
+}
+.continue:before {
+  content: "\F061";
+  font-family: "Font Awesome 5 Free";
+  padding-right: 10px;
+  font-weight: 900;
+}
+
+.hide{
+  display: none;
+}
+
+.active {
+  background-color: #0000FF;
+  color: #FFFFFF;
+}
+
+button[disabled]:not(.active) {
+  opacity: 0.3
+}
