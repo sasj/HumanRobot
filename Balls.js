@@ -66,10 +66,10 @@ class Ball {
     let d = dist(px, py, this.x, this.y);
     if (d < this.diameter) {
       console.log("CLICKED ON BUBBLE!");
-      var p = new Puzzle();
-      puzzle.push(p);
-
-      puzzleStateNew = true;
+      var p = new Pzzls();
+      pzzl.push(p);
+      // console.log(pzzl);
+      pzzlStateNew = true;
       this.on = 1;
     }
 

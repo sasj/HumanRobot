@@ -11,9 +11,11 @@ function drawScreenOne(){
       }
 
 // if puzzle is active - no interaction with nodes and buttons
-      if(puzzleStateNew === true){
-        puzzle[puzzle.length-1].frame();
-        ballsInteraction = false;
+      if(pzzlStateNew === true){
+
+          pzzl[pzzl.length-1].frame();
+
+          ballsInteraction = false;
 
         for (let i = 0; i < btnNumb; i++) {
           buttons[i].attribute('disabled','disabled');
@@ -35,4 +37,13 @@ function drawScreenOne(){
           //btnContinue.position(((width/2) + canvasDimensions.margin - (btnContinue.offsetWidth/2)), 50);
         }
       }
+
+
+
+
+
+
+
+
+
 }

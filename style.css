@@ -10,6 +10,60 @@ main {
 canvas {
   /* display: block; */
 }
+
+
+h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+h2 {
+    font-size: 1.6em;
+    margin-top: 1.9em;
+}
+
+p {
+    font-size: 0.85em;
+    line-height: 1.3em;
+
+}
+
+
+@media screen and (min-width: 411px) {
+    h1{
+
+    }
+    p {
+
+    }
+}
+@media screen and (min-width: 768px) {
+    h1{
+        font-size: 1.9em;
+        margin-top: 0.9em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    p {
+        font-size: 1.05em;
+        line-height: 1.5em;
+    }
+}
+@media screen and (min-width: 1024px) {
+    h1{
+        font-size: 2.1em;
+        margin-top: 1em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    p {
+        font-size: 1.15em;
+        line-height: 1.6em;
+    }
+}
+
+
 label {
     display: block;
     width: 38px;
@@ -45,6 +99,31 @@ label {
         line-height: 48px;
     }
 }
+@media screen and (min-width: 768px) {
+    label {
+        width: 64px;
+        height: 64px;
+
+        left: 35px;
+        top: 35px;
+
+        font-size: 38px;
+        line-height: 58px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    label {
+        width: 84px;
+        height: 84px;
+
+        left: 40px;
+        top: 40px;
+
+        font-size: 42px;
+        line-height: 78px;
+    }
+}
 
 label::after {
     content: "\F129";
@@ -63,7 +142,7 @@ input#info ~ .infoWindow {
     display: block;
     width: 200vw;
     height: max-content;
-    padding: 32px;
+    padding: 22px;
     overflow-y: scroll;
 
     position: absolute;
@@ -81,10 +160,10 @@ input#info ~ .infoWindow {
     border: 1px solid #0000FF;
 }
 input#info:checked ~ .infoWindow {
-    width: 55vw;
+    width: 75vw;
     z-index: 10;
     opacity: 1;
-    max-height: 70vh;
+    max-height: 80vh;
     color: #0000FF;
 }
 @media screen and (min-width: 411px) {
@@ -95,13 +174,13 @@ input#info:checked ~ .infoWindow {
 }
 @media screen and (min-width: 768px) {
     input#info:checked ~ .infoWindow {
-        width: 60vw;
+        width: 70vw;
         max-height: 75vh;
     }
 }
 @media screen and (min-width: 1024px) {
     input#info:checked ~ .infoWindow {
-        width: 50vw;
+        width: 70vw;
         max-height: 75vh;
     }
 }
@@ -120,7 +199,7 @@ input#info:checked ~ .infoWindow {
 }
 
 .p5Canvas {
-    border: 1px #0000FF solid;
+    border: solid 1px #0000FF;
     position: absolute;
     z-index: -1;
     align-self: flex-start;
@@ -133,7 +212,7 @@ button {
     align-self: center;
     border: solid 1px #0000FF;
     position: relative;
-    top: -45px;
+    top: -5px;
     transform: scale(0.75);
     background-color: #FFFFFF;
     color: #0000FF;
@@ -151,13 +230,16 @@ button {
 }
 @media screen and (min-width: 768px) {
     button {
-        margin: 0.85rem;
+        margin: 0.95rem;
+        font-size: 1.2rem;
+        padding: 1.3rem;
     }
 }
 @media screen and (min-width: 1024px) {
     button {
-        margin: 0.85rem;
-        /* transform: scale(1.25); */
+        top: -50px;
+        margin: 0.75rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -182,7 +264,7 @@ button:hover {
 
 .continue {
     position: absolute;
-    top: 50px;
+    top: 30px;
 }
 .continue:before {
   content: "\F061";

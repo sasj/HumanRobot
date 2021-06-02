@@ -7,7 +7,7 @@ class Blocks {
     this.rndRot = int(random(0,4));
     this.dim = dim;
     this.sp = this.dim/6;
-    this.puzzle = pzl;
+    this.pzzl = pzl;
     this.st = false;
     this.newDim = 0;
     this.good = this.rot;
@@ -34,22 +34,28 @@ class Blocks {
     return this.st;
   }
 
-  draw(){
+  draw(lalala,i,j){
+    // console.log(lalala);
     rectMode(CENTER);
     push();
 
-    translate(this.xPos,this.yPos);
+    if (lalala !== 'small') {
+      translate(this.xPos,this.yPos);
+    }
+    else {
+      // translate(0, -((this.dim*3)));
+      translate(i * this.dim, j * this.dim);
+    }
+
     strokeWeight(1);
     stroke('#0000FF');
     noFill();
 
   // console.log(this.st);
 
-
     //base rect
     fill(255);
     rect(0,0,this.dim,this.dim);
-
 
     if( this.good  === 0){
       stroke('#0000FF');
@@ -74,7 +80,7 @@ class Blocks {
       this.st = false;
     }
 
-    this.shapes(this.puzzle);
+    this.shapes(this.pzzl);
 
     pop();
   }
@@ -116,7 +122,6 @@ class Blocks {
 
   }
 
-
   drawSolved() {
 
     rectMode(CENTER);
@@ -127,15 +132,13 @@ class Blocks {
       let angle = 1;
       this.newDim += angle;
     } else {
-         return 'done';
       this.newDim = this.dim;
-
+      return 'done';
     }
 
-    fill('#FFFFFF');
+    fill('#0000FF');
     rect(0,0,this.newDim,this.newDim);
     pop();
-
   }
 
 }

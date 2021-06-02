@@ -24,9 +24,9 @@ let friction    = -0.9;
 let spring      = 0.02;
 
 // Blocks puzzles
-let puzzle = [];
-let puzzleState = true;
-let puzzleStateNew = false; //false at start
+let pzzl = [];
+let pzzlState = true;
+let pzzlStateNew = false; //false at start
 let ballsInteraction = true;
 let finalPuzzels = [];
 let scaleAmount = 4;
@@ -37,7 +37,9 @@ let artworkSize = 10;
 let textHuman;
 let textRobot;
 let textHight = 30*scaleAmount;
-let textWidth = 60*scaleAmount;
+let textWidth = 70*scaleAmount;
+
+let robotTextSpacing = 100;
 
 function setup() {
   artworkCanvas = createCanvas(canvasDimensions.width, canvasDimensions.height);
@@ -58,9 +60,9 @@ function setup() {
   }
   btnContinueSetup();
 
-  //debug Puzzle
-  var p = new Puzzle();
-  puzzle.push(p);
+  //debug pzzl
+  var p = new Pzzls();
+  pzzl.push(p);
 
   strokeWeight(1);
 
@@ -133,8 +135,8 @@ function mousePressed(e) {
     }
   }
 
-  if (puzzleStateNew === true) {
-    puzzle[puzzle.length - 1].clicked();
+  if (pzzlStateNew === true) {
+    pzzl[pzzl.length - 1].clicked();
   }
 
 
@@ -161,10 +163,10 @@ function windowResized() {
 
 function responsiveness() {
   [
-    { pixels: 320, scaleAmount: 1, margin: 25, fontSize: 16 , blockSize: 50, artworkSize:0.25},
-    { pixels: 768, scaleAmount: 2, margin: 50, fontSize: 28, blockSize: 75, artworkSize:0.25 },
-    { pixels: 1024, scaleAmount: 3, margin: 75, fontSize: 28, blockSize: 100, artworkSize:0.25 },
-    { pixels: 1220, scaleAmount: 3, margin: 75, fontSize: 28, blockSize: 100, artworkSize:0.25 },
+    { pixels: 280, scaleAmount: 1, margin: 25, fontSize: 18 , blockSize: 50, artworkSize:0.25, robotTextSpacing: 25},
+    { pixels: 768, scaleAmount: 1, margin: 50, fontSize: 28, blockSize: 75, artworkSize:0.35, robotTextSpacing: 40 },
+    { pixels: 1024, scaleAmount: 1, margin: 75, fontSize: 22, blockSize: 100, artworkSize:0.25, robotTextSpacing: 35 },
+    { pixels: 1220, scaleAmount: 1, margin: 75, fontSize: 22, blockSize: 100, artworkSize:0.25, robotTextSpacing: 35 },
   ].forEach((breakPoint) => {
     let matchMedia = window.matchMedia(`(min-width: ${breakPoint.pixels}px)`);
     // console.log(breakPoint, matchMedia);
@@ -173,6 +175,7 @@ function responsiveness() {
       fontSize      = breakPoint.fontSize;
       blockSize      = breakPoint.blockSize;
       artworkSize      = breakPoint.artworkSize;
+      robotTextSpacing = breakPoint.robotTextSpacing;
       canvasDimensions.margin = breakPoint.margin;
       wnd = (canvasDimensions.margin * 2);
       balls.forEach(ball => {

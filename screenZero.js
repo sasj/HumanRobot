@@ -47,6 +47,6 @@ function title(_xPos,_yPos){
   pop();
 
 
-// robot(height-(height/4),30,3,67);
+// robot(height-(height/4),30,10,167);
 
 }
