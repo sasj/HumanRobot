@@ -42,6 +42,7 @@ let textWidth = 70*scaleAmount;
 let robotTextSpacing = 100;
 
 function setup() {
+    pixelDensity();
   artworkCanvas = createCanvas(canvasDimensions.width, canvasDimensions.height);
   artworkCanvas.parent("artwork");
 
