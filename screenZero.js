@@ -6,13 +6,6 @@ function drawScreenZero() {
 }
 
 
-function btnContinueSetup() {
-  btnContinue = createButton('Please press this button to continue');
-  btnContinue.class("continue");
-  btnContinue.parent("artwork");
-  btnContinue.mouseClicked(goToNext);
-}
-
 
 function title(_xPos,_yPos){
   push();
@@ -45,8 +38,4 @@ function title(_xPos,_yPos){
 
     pop();
   pop();
-
-
-// robot(height-(height/4),30,10,167);
-
 }

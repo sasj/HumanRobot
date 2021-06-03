@@ -38,12 +38,4 @@ function drawScreenOne(){
         }
       }
 
-
-
-
-
-
-
-
-
 }

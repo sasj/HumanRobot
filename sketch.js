@@ -42,7 +42,7 @@ let textWidth = 70*scaleAmount;
 let robotTextSpacing = 100;
 
 function setup() {
-    pixelDensity(1);
+    pixelDensity();
   artworkCanvas = createCanvas(canvasDimensions.width, canvasDimensions.height);
   artworkCanvas.parent("artwork");
 
@@ -59,7 +59,11 @@ function setup() {
     buttons[i].parent("artwork");
     buttons[i].mouseClicked(active);
   }
-  btnContinueSetup();
+
+  btnContinue = createButton('Please press this button to continue');
+  btnContinue.class("continue");
+  btnContinue.parent("artwork");
+  btnContinue.mouseClicked(goToNext);
 
   //debug pzzl
   var p = new Pzzls();
@@ -105,12 +109,14 @@ function goToNext(){
   } else if (gameState === 1) {
     for (let i = 0; i < btnNumb; i++) {
       buttons[i].class("hide");
+      btnContinue.html("restart");
     }
-    btnContinue.removeClass("hide");
-    btnContinue.html("restart");
-    btnContinue.class("continue");
-    // btnContinue.mouseClicked(window.location.reload());
     gameState = 2;
+  } else if (gameState === 2) {
+    btnContinue.removeClass("hide");
+
+    btnContinue.class("continue");
+    btnContinue.mouseClicked(window.location.reload());
 
   }
 

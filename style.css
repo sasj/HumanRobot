@@ -8,7 +8,7 @@ main {
     overflow: hidden;
 }
 canvas {
-  /* display: block; */
+  display: block;
 }
 
 

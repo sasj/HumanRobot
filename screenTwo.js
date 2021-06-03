@@ -62,12 +62,6 @@ function drawScreenTwo(){
         }
         push();
 
-        // translate(xPos-blockSize,(yPos-(puzzleSize+blockSize)));
-        // translate(xPos-blockSize,yPos-blockSize);
-        // console.log(`translate(${xPos}-${blockSize},(${yPos}-(${puzzleSize}+${blockSize})))`);
-        // console.log(`translate(${xPos-blockSize},${yPos-puzzleSize+blockSize})`);
-
-
         translate(xPos+(blockSize/2),yPos+(blockSize/2));
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
@@ -81,7 +75,6 @@ function drawScreenTwo(){
 
     pop();
     pop();
-
 
 
     pop();
