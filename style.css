@@ -200,9 +200,11 @@ input#info:checked ~ .infoWindow {
 
 .p5Canvas {
     border: solid 1px #0000FF;
-    position: static;
+    position: absolute;
     z-index: -1;
     align-self: flex-start;
+    top: 0;
+    left: 0;
 }
 
 
