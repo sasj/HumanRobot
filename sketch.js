@@ -42,7 +42,7 @@ let textWidth = 70*scaleAmount;
 let robotTextSpacing = 100;
 
 function setup() {
-    pixelDensity();
+    pixelDensity(1);
   artworkCanvas = createCanvas(canvasDimensions.width, canvasDimensions.height);
   artworkCanvas.parent("artwork");
 
@@ -170,7 +170,7 @@ function windowResized() {
 
 function responsiveness() {
   [
-    { pixels: 411, scaleAmount: 1, margin: 25, fontSize: 18 , blockSize: 50, artworkSize:0.25, robotTextSpacing: 25},
+    { pixels: 280, scaleAmount: 1, margin: 25, fontSize: 18 , blockSize: 50, artworkSize:0.25, robotTextSpacing: 25},
     { pixels: 768, scaleAmount: 1, margin: 50, fontSize: 28, blockSize: 75, artworkSize:0.35, robotTextSpacing: 40 },
     { pixels: 1024, scaleAmount: 1, margin: 75, fontSize: 22, blockSize: 100, artworkSize:0.25, robotTextSpacing: 35 },
     { pixels: 1220, scaleAmount: 1, margin: 75, fontSize: 22, blockSize: 100, artworkSize:0.25, robotTextSpacing: 35 },
